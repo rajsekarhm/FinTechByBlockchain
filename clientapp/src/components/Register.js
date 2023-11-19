@@ -44,6 +44,7 @@ export const Registers = () => {
     }
   };
   const handleinput = (event) => {
+    console.log('sd')
     setloading(false);
     errorhandle.emailError = false;
     errorhandle.nameError = false;
@@ -56,7 +57,7 @@ export const Registers = () => {
       <div className="container">
         <div className="row ">
           <div className="col register-sec">
-            <h2 className="text-center" style={{fontFamily:"monospace"}}>Register</h2>
+            <h2 className="text-center" style={{fontFamily:"monospace", float:"-moz-initial"}}>Register</h2>
             <form className="register-form" onSubmit={handleChange} action="">
               <div className="form-group">
                 <label htmlFor="exampleInputEmail1" className="" style={{fontFamily:"monospace"}}>
@@ -67,7 +68,7 @@ export const Registers = () => {
                   className="form-control"
                   name="name"
                   placeholder="username"
-                  style={{fontFamily:"monospace"}}
+                  style={{fontFamily:"monospace", width:350}}
                   onClick={() => {
                     if (inputs.name === "") {
                       errorhandle.nameError = true;
@@ -89,7 +90,7 @@ export const Registers = () => {
                   className="form-control"
                   placeholder="example@email.com"
                   name="email"
-                  style={{fontFamily:"monospace"}}
+                  style={{fontFamily:"monospace", width: 350}}
                   onClick={() => {
                     if (inputs.email === "") {
                       errorhandle.emailError = true;
@@ -115,7 +116,7 @@ export const Registers = () => {
                   placeholder="password"
                   type="password"
                   name="password"
-                  style={{fontFamily:"monospace"}}
+                  style={{fontFamily:"monospace", width:350}}
                   onClick={() => {
                     if (inputs.password === "") {
                       errorhandle.passwordError = true;
@@ -125,7 +126,7 @@ export const Registers = () => {
                   id=""
                 />
                 {errorhandle.passwordError ? (
-                  <span className="text-danger" style={{fontFamily:"monospace"}}>Password is required.</span>
+                  <span className="text-danger" style={{fontFamily:"monospace" }}>Password is required.</span>
                 ) : null}
               </div>
               <div className="form-group">
@@ -145,11 +146,14 @@ export const Registers = () => {
                   className="btn btn-login btn-primary"
                   disabled={loading}
                   value="Register"
-                  style={{fontFamily:"monospace"}}
+                  style={{fontFamily:"monospace", float:"left"}}
                 />
                 </div>
               </div>
               <div className="clearfix"></div>
+              <br/>
+              <br/>
+              <br/>
               <div className="form-group" style={{fontFamily:"monospace"}}>
                 Already have account ? Please {" "}
                 <a

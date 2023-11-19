@@ -20,7 +20,7 @@ export const App = () => {
           <Route path="/errorPage" element={<ErrorPage />} />
           <Route path="/marketPlace" element={<ListedLand />} /> 
           <Route path="/marketPlace/:username" element={<ListedLand/>} />
-          <Route path="/inspector" element={<Inspector />} />
+          <Route path="/agent" element={<Inspector />} />
           <Route path="/addUser" element={<AddUserForm/>} />
         </Routes>
       </BrowserRouter>
