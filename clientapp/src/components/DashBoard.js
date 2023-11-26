@@ -4,7 +4,7 @@ import addLandtoStorage from "./setLocalStorage";
 import * as React from "react";
 import { Avatar } from "@mui/material";
 import { Card } from "@mui/material";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 function ProfileInfo(props) {
   const username = props.value;
