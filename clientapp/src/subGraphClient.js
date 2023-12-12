@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { createClient } from 'urql';
+import { createClient, fetchExchange } from '@urql/core';
 
 export default function SubGraphClient() {
     const [token, setToken] = useState(0);
     const queryURL = 'https://gateway-arbitrum.network.thegraph.com/api/028053c734636a2bda0f1e9f46503f9b/subgraphs/id/HUZDsRpEVP2AvzDCyzDHtdc64dyDxx8FQjzsmqSg4H3B';
     const _client = createClient({
         url: queryURL,
+        exchanges:[fetchExchange]
     });
     const _query = `{
         factories(first: 5) {
@@ -34,19 +35,14 @@ export default function SubGraphClient() {
         }
     }`;
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const { data } = await _client.query(_query).toPromise();
-            console.log(data);
-            // Update token or perform other actions with the data if needed
-        };
-        fetchData();
-    }, [_client, _query]);
+    useEffect(async () => {
+            console.log( await _client.query(_query).toPromise());
+            return null
+    });
 
     return (
         <>
-            <h3>subGraphClient</h3>
-            <div>{token}</div>
+            <h3>token</h3>
         </>
     );
 }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Web3 from "web3";
 import {Form, Button, Row, Col, Container} from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 
