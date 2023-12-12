@@ -1,4 +1,4 @@
-# Fin Tech By Blockchain
+# Nebula By Blockchain
 # Tech Stack Choosen 
 ## JS (React - Redux)
 ## Solidity
