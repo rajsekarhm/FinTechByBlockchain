@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract landAsset is  ERC20{
-    constructor() ERC20("token","TKN"){}
+contract landAsset{
     receive() external payable { }
 
     modifier etherValidate(uint256 amt){
@@ -21,22 +19,10 @@ contract landAsset is  ERC20{
         bool isRemoved;
     }
 
-    struct user{
-        address id;
-        string name;
-        uint age;
-        string city;
-        string aadharNumber;
-        string panNumber;
-        string email;
-        bool isUserVerified;
-    }
     mapping (address => lands ) _landList;
-    mapping (address =>  user)  _userList;
     mapping (address => bytes32) _encyptdata;
 
     address payable []   _landLog;
-    address [] _userLog;
 
 
     function getlandowner(address _currentOwner) public  view returns (address payable ){
@@ -109,20 +95,7 @@ contract landAsset is  ERC20{
         );
     }
 
-    function addUser(
-         address _id,
-        string memory _name,
-        uint _age,
-        string memory _city,
-        string memory _aadharNumber,
-        string memory _panNumber,
-        string memory _email,
-        bool _isUserVerified
-    ) public {
-    user memory newUser =  user(_id,_name,_age,_city,_aadharNumber,_panNumber,_email,_isUserVerified);
-    _userList[_id] = newUser;
-    _userLog.push(_id);
-    }
+
 
     function transferOwnerShip(address landAddress,address payable _newOwner,uint256 amttoSent) public returns(address){
          transferEther( _landList[landAddress].landOwner,amttoSent);
