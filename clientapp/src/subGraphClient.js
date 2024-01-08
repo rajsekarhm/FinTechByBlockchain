@@ -37,7 +37,7 @@ export default function SubGraphClient() {
 
     useEffect(async () => {
             console.log( await _client.query(_query).toPromise());
-            return null
+            return true
     });
 
     return (
