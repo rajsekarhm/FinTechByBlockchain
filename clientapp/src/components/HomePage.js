@@ -20,7 +20,7 @@ export const Homepage = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul className="navbar-nav ml-auto ps-5">
-            <li className="nav-item">
+           <li className="nav-item">
               <a
                 className="nav-link"
                 href="# "
@@ -49,6 +49,7 @@ export const Homepage = () => {
         <div className="container">
           <div className="text-center mt-5">
             <h3 style={{fontFamily:"monospace"}} > Comprehensive Finance and Account</h3>
+            <iframe src="https://www.binance.com/en/markets/overview"></iframe>
             <button className="btn btn-primary" onClick={()=>navigate('/marketPlace')} style={{fontFamily:"monospace"}}> Global Markets</button>
           </div>
         </div>
