@@ -2,7 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./RegisterUI.css";
 import "./login.css";
+const {ethers} = require('ethers')
+// const { connectToMetamask   } = require('./interfaceWeb-3/connect')
 
+async function requestAccount(){
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  await window.ethereum.request({ method: 'eth_requestAccounts' });
+  return provider;
+}
 export const Registers = () => {
   const navigate = useNavigate();
   const [errorhandle] = useState({
@@ -53,11 +60,13 @@ export const Registers = () => {
   };
 
   return (
+    <>
+    <button onClick={()=> requestAccount()}>Connect To MetaMask</button>
     <section className="container center register-block">
       <div className="container">
         <div className="row ">
           <div className="col register-sec">
-            <h2 className="text-center" style={{fontFamily:"monospace", float:"-moz-initial"}}>Register</h2>
+            <h2 className="text-center" style={{fontFamily:"monospace", float:"-moz-initial"}}>Sign Up </h2>
             <form className="register-form" onSubmit={handleChange} action="">
               <div className="form-group">
                 <label htmlFor="exampleInputEmail1" className="" style={{fontFamily:"monospace"}}>
@@ -172,5 +181,6 @@ export const Registers = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
