@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Zizzle-Stark/landingWebsite-w3-Blockchain#readme",
   "devDependencies": {
+    "cors": "^2.8.5",
     "truffle": "^5.11.5"
   },
   "dependencies": {
