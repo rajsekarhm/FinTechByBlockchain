@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Avatar } from "@mui/material";
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import "./login.css";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import "./css/login.css";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export const Login = () => {
     let username = "";
     const check = JSON.parse(localStorage.getItem("user"));
     if (!check) {
-      navigate("./errorPage");
+      navigate("/errorPage");
       return valid;
     }
     check.map((users) => {
@@ -45,12 +45,14 @@ export const Login = () => {
     setInput({ ...loginInput, [event.target.name]: event.target.value });
   };
   return (
-    <div className="container center mb-5 bg-black">
+    <div className="center container mb-5 bg-black">
       <section className="register-block">
         <div className="container">
           <div className="row ">
             <div className="col register-sec">
-              <h2 className="text-center" style={{fontFamily:"monospace"}}>Login</h2>
+              <h2 className="text-center" style={{ fontFamily: "monospace" }}>
+                Login
+              </h2>
               <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
                 <LockOutlinedIcon />
               </Avatar>
@@ -58,16 +60,15 @@ export const Login = () => {
                 <div className="form-group">
                   <label
                     htmlFor="exampleInputPhonenumber1"
-                    style={{fontFamily:"monospace"}}
-                    
+                    style={{ fontFamily: "monospace" }}
                   >
-                    Enter UserName : 
+                    Enter UserName :
                   </label>
                   <input
                     className="form-control"
                     type="phonenumber"
                     placeholder="username"
-                    style={{fontFamily:"monospace"}}
+                    style={{ fontFamily: "monospace" }}
                     name="name"
                     onChange={handleChange}
                     id=""
@@ -76,7 +77,7 @@ export const Login = () => {
                 <div className="form-group">
                   <label
                     htmlFor="exampleInputPassword1"
-                    style={{fontFamily:"monospace"}}
+                    style={{ fontFamily: "monospace" }}
                   >
                     Enter Password :
                   </label>
@@ -84,7 +85,7 @@ export const Login = () => {
                     className="form-control"
                     type="password"
                     placeholder="password"
-                    style={{fontFamily:"monospace"}}
+                    style={{ fontFamily: "monospace" }}
                     name="password"
                     onChange={handleChange}
                     id=""
@@ -118,7 +119,7 @@ export const Login = () => {
                         type="submit"
                         className="btn btn-login btn-primary"
                         value="Login"
-                        style={{fontFamily:"monospace"}}
+                        style={{ fontFamily: "monospace" }}
                       />
                     </div>
                   </div>

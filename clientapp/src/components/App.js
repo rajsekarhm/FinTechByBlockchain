@@ -4,10 +4,9 @@ import { Homepage } from "./HomePage";
 import { Login } from "./Login";
 import { DashBoard } from "./DashBoard";
 import ErrorPage from "./ErrorPage";
-import styles from "./App.css";
-import ListedLand from "./MarketPlace";
-import Inspector from "./Inspector";
-import AddUserForm from "./AddUser";
+import styles from "./css/App.css";
+import MainPanel from "./MarketPlace";
+import Agent from "./Inspector";
 export const App = () => {
   return (
     <div className={`${styles.App}`}>
@@ -18,10 +17,9 @@ export const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard/:username" element={<DashBoard />} />
           <Route path="/errorPage" element={<ErrorPage />} />
-          <Route path="/marketPlace" element={<ListedLand />} /> 
-          <Route path="/marketPlace/:username" element={<ListedLand/>} />
-          <Route path="/agent" element={<Inspector />} />
-          <Route path="/addUser" element={<AddUserForm/>} />
+          <Route path="/marketPlace" element={<MainPanel />} />
+          <Route path="/marketPlace/:username" element={<MainPanel />} />
+          <Route path="/agent" element={<Agent />} />
         </Routes>
       </BrowserRouter>
     </div>
