@@ -1,9 +1,19 @@
-const crypt = require("crypto-js");
+import crypt from "crypto-js";
 
-function encryt() {}
+function encryt(password, secretPharse) {
+  return crypt.AES.encrypt(
+    password.toString(),
+    secretPharse.toString()
+  ).toString();
+}
 
 function verifybyHash() {}
 
-function decrypt() {}
+function decrypt(password, secretPharse, secretPharse) {
+  return crypt.AES.decrypt(
+    password.toString(),
+    secretPharse.toString()
+  ).toString(crypt.enc.Utf8);
+}
 
-module.exports = { encryt, verifybyHash, decrypt };
+export { encryt, verifybyHash, decrypt };
