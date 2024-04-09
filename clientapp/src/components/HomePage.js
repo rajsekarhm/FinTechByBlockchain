@@ -54,7 +54,7 @@ export const Homepage = () => {
           <div className="mt-5 text-center">
             <h3 style={{ fontFamily: "monospace" }}>
               {" "}
-              Comprehensive Finance and Account
+              All in One FinTech
             </h3>
             <button
               className="btn btn-primary"

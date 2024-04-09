@@ -1,12 +1,12 @@
-import { Registers } from "./Register";
+import { Registers } from "./Register.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Homepage } from "./HomePage";
-import { Login } from "./Login";
-import { DashBoard } from "./DashBoard";
-import ErrorPage from "./ErrorPage";
+import { Homepage } from "./HomePage.js";
+import { Login } from "./Login.js";
+import { DashBoard } from "./DashBoard.js";
+import ErrorPage from "./ErrorPage.js";
 import styles from "./css/App.css";
-import MainPanel from "./MarketPlace";
-import Agent from "./Inspector";
+import MainPanel from "./MarketPlace.js";
+import Agent from "./Inspector.js";
 export const App = () => {
   return (
     <div className={`${styles.App}`}>

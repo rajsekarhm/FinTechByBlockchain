@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Avatar } from "@mui/material";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+// import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import "./css/login.css";
 
 export const Login = () => {
@@ -53,9 +53,9 @@ export const Login = () => {
               <h2 className="text-center" style={{ fontFamily: "monospace" }}>
                 Login
               </h2>
-              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+              {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
                 <LockOutlinedIcon />
-              </Avatar>
+              </Avatar> */}
               <form className="register-form" onSubmit={handleSubmit} action="">
                 <div className="form-group">
                   <label

@@ -1,5 +1,5 @@
 import { Card } from "@mui/material";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 function Agent() {
   const listOfLands = JSON.parse(localStorage.getItem("listOfLands")) || [];
   const toVerify = listOfLands.filter((land) => {
@@ -10,7 +10,7 @@ function Agent() {
   });
   const handleVerify = (land) => {
     const index = listOfLands.findIndex(
-      (object) => land.landID === object.landID,
+      (object) => land.landID === object.landID
     );
     listOfLands[index].isforSell = true;
     listOfLands[index].isLandVerified = true;

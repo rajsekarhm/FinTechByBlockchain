@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import addLandtoStorage from "./setLocalStorage";
+import addLandtoStorage from "./setLocalStorage.js";
 import * as React from "react";
 import { Avatar } from "@mui/material";
 import { Card } from "@mui/material";
