@@ -1,6 +1,6 @@
 import { Card } from "@mui/material";
-import Button from "react-bootstrap/Button";
-function Inspector() {
+// import Button from "react-bootstrap/Button";
+function Agent() {
   const listOfLands = JSON.parse(localStorage.getItem("listOfLands")) || [];
   const toVerify = listOfLands.filter((land) => {
     if (!land.isLandVerified) {
@@ -19,22 +19,9 @@ function Inspector() {
   };
   return (
     <>
-      {toVerify.map((land) => {
-        return (
-          <>
-            <Card>
-            <h3 style={{backgroundColor: 'whitesmoke',padding:5, fontFamily:'monospace' ,textAlign: "center" }}>{land.landAddress}</h3>
-            <h3 style={{backgroundColor: 'whitesmoke',padding:5, fontFamily:'monospace' ,textAlign: "center" }}>{land.landID}</h3>
-            <h3 style={{backgroundColor: 'whitesmoke',padding:5, fontFamily:'monospace' ,textAlign: "center" }}>{land.landOwner}</h3>
-            <h3 style={{backgroundColor: 'whitesmoke',padding:5, fontFamily:'monospace' ,textAlign: "center" }}>{land.price}</h3>
-              <Button  onClick={() => handleVerify(land)}>Approve</Button>
-            </Card>
-          </>
-        );
-      })}
+      <h1> Agent Will Be Here</h1>
     </>
   );
 }
 
-export default Inspector;
-
+export default Agent;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import addLandtoStorage from "./setLocalStorage";
+import addLandtoStorage from "./setLocalStorage.js";
 import * as React from "react";
 import { Avatar } from "@mui/material";
 import { Card } from "@mui/material";
@@ -8,7 +8,7 @@ import { Card } from "@mui/material";
 
 function ProfileInfo(props) {
   const username = props.value;
-  const userData = JSON.parse(localStorage.getItem("user"))
+  const userData = JSON.parse(localStorage.getItem("users"))
     .filter((fetchvalue) => {
       if (fetchvalue.name === username) {
         return true;
@@ -21,8 +21,8 @@ function ProfileInfo(props) {
     <Card
       style={{
         backgroundColor: "aquamarine",
-        width: 300,
-        height: 75,
+        width: 400,
+        height: 100,
         border: "radius",
         borderBlockColor: "coral",
         fontFamily: "monospace",
@@ -52,7 +52,7 @@ function YourLand(props) {
   return isLand ? (
     <React.Fragment>
       <h3 style={{ fontFamily: "monospace" }}>Your Land</h3>
-      <table className="table table-striped table-bordered table-sm">
+      <table className="table-striped table-bordered table-sm table">
         <thead>
           <tr>
             <th style={{ fontFamily: "monospace" }}>Land Address</th>
@@ -144,7 +144,7 @@ export const DashBoard = () => {
         >
           Visit Market Place
         </button>
-        <div className="collapse navbar-collapse" id="navbarsExampleDefault">
+        <div className="navbar-collapse collapse" id="navbarsExampleDefault">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <Avatar
@@ -177,7 +177,10 @@ export const DashBoard = () => {
           <h3 className="text-center" style={{ fontFamily: "monospace" }}>
             Profile Access
           </h3>
-          <div className="profileAccess" style={{position:'relative', left:1000}}>
+          <div
+            className="profileAccess"
+            style={{ position: "relative", left: 1000 }}
+          >
             <ProfileInfo value={username} />
           </div>
           {showProfile ? "okk" : null}

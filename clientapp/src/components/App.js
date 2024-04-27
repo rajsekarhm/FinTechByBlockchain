@@ -1,13 +1,12 @@
-import { Registers } from "./Register";
+import { Registers } from "./Register.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Homepage } from "./HomePage";
-import { Login } from "./Login";
-import { DashBoard } from "./DashBoard";
-import ErrorPage from "./ErrorPage";
-import styles from "./App.css";
-import ListedLand from "./MarketPlace";
-import Inspector from "./Inspector";
-import AddUserForm from "./AddUser";
+import { Homepage } from "./HomePage.js";
+import { Login } from "./Login.js";
+import { DashBoard } from "./DashBoard.js";
+import ErrorPage from "./ErrorPage.js";
+import styles from "./css/App.css";
+import MainPanel from "./MarketPlace.js";
+import Agent from "./Inspector.js";
 export const App = () => {
   return (
     <div className={`${styles.App}`}>
@@ -18,10 +17,9 @@ export const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard/:username" element={<DashBoard />} />
           <Route path="/errorPage" element={<ErrorPage />} />
-          <Route path="/marketPlace" element={<ListedLand />} /> 
-          <Route path="/marketPlace/:username" element={<ListedLand/>} />
-          <Route path="/agent" element={<Inspector />} />
-          <Route path="/addUser" element={<AddUserForm/>} />
+          <Route path="/marketPlace" element={<MainPanel />} />
+          <Route path="/marketPlace/:username" element={<MainPanel />} />
+          <Route path="/agent" element={<Agent />} />
         </Routes>
       </BrowserRouter>
     </div>
