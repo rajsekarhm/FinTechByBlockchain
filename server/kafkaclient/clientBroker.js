@@ -11,7 +11,7 @@ const producer = kafka.producer();
   try {
     await producer.connect();
     await producer.send({
-      topic: 'fintechBlockchain', 
+      topic: 'NebulaExchange', 
       messages: [
         { value: 'Your message here' } 
       ]
