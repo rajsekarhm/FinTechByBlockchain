@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/agents", (req, res) => {
-  res.json(" ooooo");
+  res.json("Agents Request");
 });
 
 app.get("/getUsers/:sector", (req, res) => {
