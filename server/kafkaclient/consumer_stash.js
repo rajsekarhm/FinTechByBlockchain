@@ -1,17 +1,17 @@
-const { Kafka, logLevel } = require('kafkajs');
-const [,,topicName,username,password] =  process.argv 
+const { Kafka, logLevel } = require("kafkajs");
+const [, , topicName, username, password] = process.argv;
 const kafka = new Kafka({
-  brokers: ['tender-giraffe-8501-us1-kafka.upstash.io:9092'],
+  brokers: ["tender-giraffe-8501-us1-kafka.upstash.io:****"],
   ssl: true,
   sasl: {
-      mechanism: 'scram-sha-256',
-      username: username,
-      password: password
+    mechanism: "scram-sha-256",
+    username: username,
+    password: password,
   },
   logLevel: logLevel.ERROR,
 });
 
-const consumer = kafka.consumer({ groupId:'1'  });
+const consumer = kafka.consumer({ groupId: "1" });
 
 const run = async () => {
   await consumer.connect();
@@ -28,4 +28,4 @@ const run = async () => {
   });
 };
 
-run().catch(e => console.error('[example/consumer] e.message', e));
+run().catch((e) => console.error("[example/consumer] e.message", e));
