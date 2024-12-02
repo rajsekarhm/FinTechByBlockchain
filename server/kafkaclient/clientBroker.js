@@ -1,26 +1,29 @@
 const { Kafka } = require("kafkajs");
+
 const kafka = new Kafka({
-  clientId: 'my-app',
-  brokers: ['localhost:9092'] 
+  clientId: "my-app",
+  brokers: ["127.0.0.1:9092"],
 });
 
+async function init() {
+  const admin = kafka.admin();
+  console.log("Admin connecting...");
+  admin.connect();
+  console.log("Admin Connection Success...");
 
-const producer = kafka.producer();
+  console.log("Creating Topic [rider-updates]");
+  await admin.createTopics({
+    topics: [
+      {
+        topic: "rider-updates",
+        numPartitions: 2,
+      },
+    ],
+  });
+  console.log("Topic Created Success [rider-updates]");
 
-(async () => {
-  try {
-    await producer.connect();
-    await producer.send({
-      topic: 'NebulaExchange', 
-      messages: [
-        { value: 'Your message here' } 
-      ]
-    });
-    console.log('Message sent successfully');
-  } catch (error) {
-    console.error('Error sending message:', error);
-  } finally {
-    await producer.disconnect();
-  }
-})()
+  console.log("Disconnecting Admin..");
+  await admin.disconnect();
+}
 
+init();

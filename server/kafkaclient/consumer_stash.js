@@ -11,7 +11,7 @@ const kafka = new Kafka({
   logLevel: logLevel.ERROR,
 });
 
-const consumer = kafka.consumer({ groupId: 'YOUR_CONSUMER_GROUP' });
+const consumer = kafka.consumer({ groupId:'1'  });
 
 const run = async () => {
   await consumer.connect();

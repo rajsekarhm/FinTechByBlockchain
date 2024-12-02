@@ -1,10 +1,12 @@
-# Nebula By Blockchain
-# Tech Stack Choosen 
-## JS (React - Redux)
-## Solidity
-## Meta Mask Wallet
-## Graphql
-## truffle framework
-## kafka ( Message Broker)
-## HDFS (data handling)
-## casandra DB
+# AlphaX Service
+
+## Objective To Learn Scraping Of Blockchains 
+
+## This Service Under Building 
+
+# Tech Stack  
+  JS (React - Redux)
+  Solidity
+  Meta Mask Wallet
+  Graphql
+  truffle framework
